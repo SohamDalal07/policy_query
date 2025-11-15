@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackRx – AI Policy Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="hero">
+            <div class="hero-controls">
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙 Dark mode</button>
+            </div>
+            <p class="eyebrow">HackRx Policy Copilot</p>
+            <h1>Chat with your insurance knowledge base</h1>
+            <p class="subhead">Ingest PDFs, surface policy answers, and collaborate with the AI assistant in one elegant workspace.</p>
+        </header>
+
+        <div class="main-grid">
+            <section class="panel knowledge-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Knowledge</p>
+                        <h2>Document sources</h2>
+                    </div>
+                    <button class="pill-btn" onclick="loadDocs()">Refresh</button>
+                </div>
+
+                <div class="ingest">
+                    <input id="urlInput" type="text" placeholder="Paste PDF/TXT URL to ingest..." />
+                    <button class="icon-btn primary" onclick="ingestUrl()">Ingest</button>
+                </div>
+
+                <div id="docsList" class="docs-list"></div>
+            </section>
+
+            <section class="panel chat-panel">
+                <div class="chat-panel-header">
+                    <div>
+                        <p class="eyebrow">Assistant</p>
+                        <h2>HackRx – AI Policy Assistant</h2>
+                        <p class="helper-text">Context-aware answers with citation-ready summaries.</p>
+                    </div>
+                    <div class="status-chip checking" id="statusChip">
+                        <span class="dot"></span>
+                        <span class="status-label" id="statusLabel">Checking…</span>
+                    </div>
+                </div>
+
+                <div id="chatWindow" class="chat-window">
+                    <div class="empty-state">
+                        <h3>Start the conversation</h3>
+                        <p>Ask about premiums, clauses, or upload a fresh policy to analyze.</p>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input id="chatInput" type="text" placeholder="Ask about your insurance policy..." />
+                    <div class="control-btns">
+                        <button class="icon-btn" onclick="startVoiceInput()" title="Voice input">🎤</button>
+                        <label class="icon-btn" title="Attach document">
+                            📎
+                            <input type="file" id="fileInput" hidden onchange="sendFile()" />
+                        </label>
+                        <button class="send-btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="token-area">
+            <input id="tokenInput" type="password" placeholder="Enter your HACKRX_API_KEY" />
+            <button class="icon-btn" onclick="saveToken()">Save Token</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

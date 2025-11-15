@@ -1,0 +1,21 @@
+# HackRx API Environment Variables Template
+# Copy this content to a .env file and fill in your actual values
+
+# API Key for Bearer token authentication
+# This is used to authenticate API requests with Bearer token
+HACKRX_API_KEY=8b796ad826037b97ba28ae4cd36c4605bd9ed1464673ad5b0a3290a9867a9d21
+
+# Google Gemini API Key for LLM answers
+# This is used for AI-powered question answering
+GEMINI_API_KEY=your-gemini-api-key-here
+
+# Optional: Additional configuration
+# DEBUG_MODE=true
+# LOG_LEVEL=INFO
+# MAX_FILE_SIZE=10485760  # 10MB in bytes
+
+# Instructions:
+# 1. Copy this content to a new file named .env
+# 2. Replace the placeholder values with your actual API keys
+# 3. Keep the .env file secure and never commit it to version control
+# 4. The .env file is already in .gitignore to prevent accidental commits

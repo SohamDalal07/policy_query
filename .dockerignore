@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+.env.*
+.envrc
+node_modules/
+hackrx-dfb45-firebase-adminsdk-fbsvc-27abf4570f.json
+.git
+.gitignore
+Dockerfile
+.idea/
+.vscode/
